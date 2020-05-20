@@ -79,6 +79,15 @@ def cleaner_oci(f):
             break
     return f.lower()
 
+def cleaner_ibm(f):
+    f = f.replace("_", "-")
+    f = f.replace("-red", "")
+    for p in cfg.FILE_PREFIXES["ibm"]:
+        if f.startswith(p):
+            f = f[len(p) :]
+            break
+    return f.lower()
+
 
 def cleaner_programming(f):
     return f.lower()
@@ -93,6 +102,7 @@ cleaners = {
     "alibabacloud": cleaner_alibabacloud,
     "oci": cleaner_oci,
     "programming": cleaner_programming,
+    "ibm": cleaner_ibm,
 }
 
 

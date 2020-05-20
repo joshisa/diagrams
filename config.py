@@ -11,7 +11,7 @@ DIR_APP_ROOT = "diagrams"
 DIR_RESOURCE = "resources"
 DIR_TEMPLATE = "templates"
 
-PROVIDERS = ("base", "onprem", "aws", "azure", "gcp", "k8s", "alibabacloud", "oci", "programming")
+PROVIDERS = ("base", "onprem", "aws", "azure", "gcp", "k8s", "alibabacloud", "oci", "programming", "ibm")
 
 #########################
 #  Resource Processing  #
@@ -33,6 +33,7 @@ FILE_PREFIXES = {
     "alibabacloud": (),
     "oci": ("OCI-",),
     "programming": (),
+    "ibm": ("IBM-Cloud-", "IBM-"),
 }
 
 #########################
@@ -56,6 +57,7 @@ UPPER_WORDS = {
         "sa", "sc", "sts", "svc",
     ),
     "oci": ("oci",),
+    "ibm": ("ibm",),
 }
 
 TITLE_WORDS = {
@@ -67,7 +69,10 @@ TITLE_WORDS = {
     },
     "aws": {
         "cloudfront": "CloudFront"
-    }
+    },
+    "ibm": {
+        "ibm": "IBM Cloud"
+    },
 }
 
 # TODO: check if the classname exists
@@ -339,5 +344,10 @@ ALIASES = {
             "Php": "PHP",
             "Typescript": "TypeScript"
         },
+    },
+    "ibm": {
+        "compute": {
+          "Datacenter": "DC"
+        }
     },
 }
